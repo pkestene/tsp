@@ -1,0 +1,7 @@
+*.o
+KokkosCore_config*
+KokkosCore_Config_*.tmp
+KokkosCore_Config_*.hpp
+libkokkos.a
+tsp_kokkos_cuda
+tsp_kokkos_openmp
