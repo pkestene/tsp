@@ -21,14 +21,6 @@ struct route_cost
       cost(cost)
   { }
 
-  static struct min_functor
-  {
-    route_cost operator()(route_cost& x, route_cost& y) const
-    {
-      return x.cost < y.cost ? x : y;
-    }
-  } minf;
-
   static
   route_cost min(const route_cost& x, const route_cost& y)
   {

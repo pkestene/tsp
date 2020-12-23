@@ -1,21 +1,22 @@
 #include "route_iterator.h"
 #include "route_cost.h"
 #include "tsp_utils.h"
-
+#include "counting_iterator.h"
 #include "SimpleTimer.h"
 
-#include <thrust/iterator/counting_iterator.h>
-#include <thrust/system/omp/execution_policy.h>
-#include <thrust/system/omp/vector.h>
-#include <thrust/generate.h>
-#include <thrust/reduce.h>
+// #include <thrust/iterator/counting_iterator.h>
+// #include <thrust/system/omp/execution_policy.h>
+// #include <thrust/system/omp/vector.h>
+// #include <thrust/generate.h>
+// #include <thrust/reduce.h>
 
 #include <cstdio> // for printf
 #include <cstdlib> // for EXIT_SUCCESS
 #include <iostream>
 
-#include <numeric>
+#include <algorithm>
 #include <execution>
+#include <numeric>
 
 // ============================================
 // ============================================
@@ -86,8 +87,8 @@ route_cost find_best_route(int const* distances)
 
   return
     std::transform_reduce(std::execution::par,
-                          thrust::counting_iterator<int64_t>(0),
-                          thrust::counting_iterator<int64_t>(factorial(N)),
+                          counting_iterator(0),
+                          counting_iterator(factorial(N)),
                           route_cost(),
                           //route_cost::minf,
                           [](route_cost x, route_cost y) { return x.cost < y.cost ? x : y; },

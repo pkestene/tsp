@@ -101,3 +101,19 @@ Number of cities  | time (seconds)
 12                |   0.106
 13                |   1.41
 14                |  22.4
+
+## stdpar
+
+### stdpar for multicore cpu
+
+Number of cities  | time (seconds)
+----------------- | ---------------
+10                |   0.027
+11                |   0.128
+12                |   5.10
+13                | 114.0
+14                |  TODO
+
+### stdpar for GPU
+
+Does not compile !?! ;(

@@ -7,7 +7,7 @@
 
 // ==================================================
 // ==================================================
-auto makeCityMap()
+auto makeCityMap() -> std::map<std::string, int>
 {
   std::map<std::string, int> city2index;
 
