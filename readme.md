@@ -70,7 +70,11 @@ Number of cities  | time (seconds)
 13                |   1.51
 14                |  20.5
 
-## Kokkos - OpenMP
+## Kokkos
+
+To build, you just need to edit `kokkos/Makefile`, and change the first line by modifying variable `KOKKOS_PATH` to the full path where you cloned [kokkos](https://github.com/kokkos/kokkos/) sources.
+
+### Kokkos - OpenMP
 
 Just run `make` in subdir `kokkos`.
 
@@ -84,7 +88,7 @@ Number of cities  | time (seconds)
 13                |  24.5
 14                | 376.6
 
-## Kokkos - Cuda
+### Kokkos - Cuda
 
 Just run `make KOKKOS_DEVICES=Cuda` in subdir `kokkos`.
 
