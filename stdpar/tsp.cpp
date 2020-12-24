@@ -169,19 +169,7 @@ int main(int argc, char* argv[])
   if (argc>1)
     n = atoi(argv[1]);
 
-  if (n==4)
-      solve_traveling_salesman<4>(10000);
-  else if (n==5)
-      solve_traveling_salesman<5>(10000);
-  else if (n==6)
-      solve_traveling_salesman<6>(1000);
-  else if (n==7)
-    solve_traveling_salesman<7>(1000);
-  else if (n==8)
-    solve_traveling_salesman<8>(100);
-  else if (n==9)
-    solve_traveling_salesman<9>(10);
-  else if (n==10)
+  if (n==10)
     solve_traveling_salesman<10>();
   else if (n==11)
     solve_traveling_salesman<11>();

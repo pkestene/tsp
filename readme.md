@@ -116,4 +116,12 @@ Number of cities  | time (seconds)
 
 ### stdpar for GPU
 
-Does not compile !?! ;(
+Similar performance as OpenAcc and Kokkos/Cuda.
+
+Number of cities  | time (seconds)
+----------------- | ---------------
+10                |   0.007
+11                |   0.016
+12                |   0.15
+13                |   1.40
+14                |  21.3

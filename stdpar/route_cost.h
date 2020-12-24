@@ -21,15 +21,15 @@ struct route_cost
       cost(cost)
   { }
 
-  static
-  route_cost min(const route_cost& x, const route_cost& y)
-  {
-    if (x.cost < y.cost)
-    {
-      return x;
-    }
-    return y;
-  }
+  // static
+  // route_cost min(const route_cost& x, const route_cost& y)
+  // {
+  //   if (x.cost < y.cost)
+  //   {
+  //     return x;
+  //   }
+  //   return y;
+  // }
 
 }; // route_cost
 
