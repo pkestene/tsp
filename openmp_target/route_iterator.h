@@ -4,7 +4,7 @@
 #include <cstdint>
 #include <cstdio>
 #include <inttypes.h>
-#include <cassert>
+//#include <cassert>
 
 // =====================================================
 // =====================================================
@@ -72,7 +72,7 @@ route_iterator<N>::route_iterator(uint64_t route_id)
   : m_route_id(route_id),
     m_i(0)
 {
-  assert(m_route_id < factorial(N));
+  //assert(m_route_id < factorial(N));
 
   // invalid value
   for (int k=0; k<N; ++k)
@@ -83,7 +83,7 @@ route_iterator<N>::route_iterator(uint64_t route_id)
     m_state[k] = k;
 
 
-  assert(N>=2);
+  //assert(N>=2);
 
   int divisor = 1;
   uint64_t iter = m_route_id;

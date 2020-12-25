@@ -54,15 +54,19 @@ Just follow the steps mentioned here:
 - [how-to-build-and-run-your-modern-parallel-code-in-c-17-and-openmp-4-5-library-on-nvidia-gpus](https://devmesh.intel.com/blog/724749/how-to-build-and-run-your-modern-parallel-code-in-c-17-and-openmp-4-5-library-on-nvidia-gpus)
 - [Clang_with_OpenMP_Offloading_to_NVIDIA_GPUs](https://hpc-wiki.info/hpc/Building_LLVM/Clang_with_OpenMP_Offloading_to_NVIDIA_GPUs)
 
-Performance looks good (similar to Kokkos::CUDA below).
+Performance are quite slow (compared to PGI/OpenAcc or Kokkos::CUDA below) by a factor of x3 when N >= 12.
 
 Number of cities  | time (seconds)
 ----------------- | ---------------
-10                |   
-11                |   
-12                |   
-13                |   
-14                |  
+10                |   0.077
+11                |   0.104
+12                |   0.39
+13                |   3.56
+14                |  59.5
+
+I tried two compile toolchains:
+- clang 10.0 with cuda 10.1
+- clang 11.0 with cuda 11.2
 
 ## OpenAcc (PGI compiler)
 

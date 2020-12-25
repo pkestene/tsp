@@ -4,6 +4,11 @@
 
 #include "SimpleTimer.h"
 
+#ifdef _OPENMP
+#include <omp.h>
+#endif
+
+
 #include <cstdio> // for printf
 #include <cstdlib> // for EXIT_SUCCESS
 #include <iostream>
@@ -49,7 +54,7 @@ void test_city_distance()
   {
     for (size_t to=0; to<size; ++to)
     {
-      assert(distances[to+size*from] == distances[from+size*to]);
+      //assert(distances[to+size*from] == distances[from+size*to]);
       printf("%05d ",distances[to+size*from]);
     }
     printf("\n");
@@ -62,7 +67,7 @@ void test_city_distance()
   {
     for (int to=0; to<small_n; ++to)
     {
-      assert(distances_small[to+small_n*from] == distances_small[from+small_n*to]);
+      //assert(distances_small[to+small_n*from] == distances_small[from+small_n*to]);
       printf("%05d ",distances_small[to+small_n*from]);
     }
     printf("\n");
@@ -150,6 +155,17 @@ void solve_traveling_salesman(int nbRepeat = 1)
 int main(int argc, char* argv[])
 {
 
+  /*
+   * check the number of accelerators
+   */
+  int naccel = omp_get_num_devices();
+  if (0 == naccel) {
+    printf("No accelerator found ... exit\n");
+    exit(EXIT_FAILURE);
+  } else {
+    printf("%d accelerator found ... continue\n", naccel);
+  }
+
   // print factorials up to 14!
   // print_factorials(14);
 
@@ -167,19 +183,19 @@ int main(int argc, char* argv[])
   if (argc>1)
     n = atoi(argv[1]);
 
-  if (n==4)
-      solve_traveling_salesman<4>(10000);
-  else if (n==5)
-      solve_traveling_salesman<5>(10000);
-  else if (n==6)
-      solve_traveling_salesman<6>(1000);
-  else if (n==7)
-    solve_traveling_salesman<7>(1000);
-  else if (n==8)
-    solve_traveling_salesman<8>(100);
-  else if (n==9)
-    solve_traveling_salesman<9>(10);
-  else if (n==10)
+  // if (n==4)
+  //     solve_traveling_salesman<4>(10000);
+  // else if (n==5)
+  //     solve_traveling_salesman<5>(10000);
+  // else if (n==6)
+  //     solve_traveling_salesman<6>(1000);
+  // else if (n==7)
+  //   solve_traveling_salesman<7>(1000);
+  // else if (n==8)
+  //   solve_traveling_salesman<8>(100);
+  // else if (n==9)
+  //   solve_traveling_salesman<9>(10);
+  if (n==10)
     solve_traveling_salesman<10>();
   else if (n==11)
     solve_traveling_salesman<11>();
