@@ -46,6 +46,24 @@ Number of cities  | time (seconds)
 13                |  24.2
 14                | 368.3
 
+## OpenMP target for Nvidia
+
+We need an OpenMP 4.5 capable compiler:
+
+Just follow the steps mentioned here:
+- [how-to-build-and-run-your-modern-parallel-code-in-c-17-and-openmp-4-5-library-on-nvidia-gpus](https://devmesh.intel.com/blog/724749/how-to-build-and-run-your-modern-parallel-code-in-c-17-and-openmp-4-5-library-on-nvidia-gpus)
+- [Clang_with_OpenMP_Offloading_to_NVIDIA_GPUs](https://hpc-wiki.info/hpc/Building_LLVM/Clang_with_OpenMP_Offloading_to_NVIDIA_GPUs)
+
+Performance looks good (similar to Kokkos::CUDA below).
+
+Number of cities  | time (seconds)
+----------------- | ---------------
+10                |   
+11                |   
+12                |   
+13                |   
+14                |  
+
 ## OpenAcc (PGI compiler)
 
 ### OpenAcc for multicore CPU
@@ -61,6 +79,8 @@ Number of cities  | time (seconds)
 14                |  XX
 
 ### OpenAcc for GPU
+
+Performance looks good (similar to Kokkos::CUDA below).
 
 Number of cities  | time (seconds)
 ----------------- | ---------------
@@ -105,6 +125,8 @@ Number of cities  | time (seconds)
 ## stdpar
 
 ### stdpar for multicore cpu
+
+Again, performance obtained here is odd; it's much slower than OpenMP with g++, but should be similar....
 
 Number of cities  | time (seconds)
 ----------------- | ---------------
