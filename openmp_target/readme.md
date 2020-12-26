@@ -7,13 +7,15 @@ See the following links:
 
 ## Get llvm sources
 
-As of today (December 2020), the highest cuda version compatible with clang, is cuda 10.2; as such we use llvm/clang 10.x release branch.
+As of today (December 2020), the highest cuda version compatible with clang, is cuda 10.1; as such we use llvm/clang 10.x release branch.
 
 ```shell
 git clone git@github.com:llvm/llvm-project.git
 cd llvm-project
 git checkout -b release/10.x origin/release/10.x
 ```
+
+I also tried to build llvm from release branch 11.x, with cuda/11.2; it basically works.
 
 ## First Build with gcc
 
