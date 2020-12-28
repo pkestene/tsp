@@ -165,7 +165,7 @@ int main(int argc, char* argv[])
 
   //test_city_distance();
 
-  int n = 8;
+  int n = 10;
   if (argc>1)
     n = atoi(argv[1]);
 
