@@ -128,7 +128,7 @@ Number of cities  | time (seconds)
 
 ## stdpar
 
-### stdpar for multicore cpu
+### stdpar for multicore cpu (nvc++ compiler)
 
 Again, performance obtained here is odd; it's much slower than OpenMP with g++, but should be similar....
 
@@ -140,7 +140,7 @@ Number of cities  | time (seconds)
 13                | 114.0
 14                |  TODO
 
-### stdpar for GPU
+### stdpar for GPU (nvc++ compiler)
 
 Similar performance as OpenAcc and Kokkos/Cuda.
 
@@ -151,3 +151,39 @@ Number of cities  | time (seconds)
 12                |   0.15
 13                |   1.40
 14                |  21.3
+
+## SYCL
+
+There are a lot of SYCL implementation available, here we tried
+- Intel OneAPI DPC++ (linux) for x86 multi-core
+- Intel LLVM (linux) for Nvidia GPU (see https://github.com/intel/llvm)
+
+### SYCL OneAPI for x86 multicore
+
+`module load compiler/2021.1.1`
+
+Number of cities  | time (seconds)
+----------------- | ---------------
+10                |   1.29
+11                |   1.40
+12                |   2.62
+13                |  21.3
+14                |  TODO
+
+for large values of N, we retrieve the expected results (OpenMP, Kokkos::OpenMP, ...).
+
+### SYCL OneAPI for Nvidia GPU (LLVM/intel)
+
+`module load llvm/12-intel-sycl-cuda`
+
+These results should be optimized by changing the number of block of threads and the block size (à la CUDA).
+
+Performance are correct, maybe a bit slow for N=14.
+
+Number of cities  | time (seconds)
+----------------- | ---------------
+10                |   0.001
+11                |   0.008
+12                |   0.11
+13                |   1.86
+14                |  37.4
