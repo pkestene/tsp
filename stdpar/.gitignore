@@ -1,4 +1,5 @@
 tsp_pgi_stdpar_cpu
 tsp_pgi_stdpar_gpu
 tsp_gnu_stdpar_cpu
+tsp_dpcpp_stdpar_cpu
 *.o
