@@ -42,3 +42,9 @@ ccmake  -DCLANG_OPENMP_NVPTX_DEFAULT_ARCH=sm_75 -DLIBOMPTARGET_NVPTX_COMPUTE_CAP
 make -j 4
 make install
 ```
+
+
+# Other compilers available
+
+- [AMD clang-based AOMP compiler](https://github.com/ROCm-Developer-Tools/aomp); it also supports [Nvidia GPUs](https://github.com/ROCm-Developer-Tools/aomp/blob/master/docs/UBUNTUINSTALL.md#nvidia-cuda-driver)
+
