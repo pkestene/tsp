@@ -10,5 +10,6 @@
   ```
 - build for Cuda backend:
   ```shell
+  module load cuda/11.3
   make -j 8 CUDA_ARCH="Zen,Ampere80" CUDA_DEVICES="OpenMP,Cuda"
   ```
