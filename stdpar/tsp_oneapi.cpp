@@ -1,4 +1,4 @@
-// dpcpp -O3  -fsycl -std=c++17 -ferror-limit=3 -fsycl-unnamed-lambda -o test_pstl_oneapi test_pstl_oenapi.cpp -L${ONEAPI_ROOT}/tbb/2021.1.1/lib/intel64/gcc4.8 -ltbb
+// dpcpp -O3 -std=c++17 -ferror-limit=3 $< -o $@ -L${TBBROOT}/lib/intel64/gcc4.8 -ltbb
 
 #include <oneapi/dpl/execution>
 #include <oneapi/dpl/algorithm>
