@@ -64,9 +64,10 @@ Number of cities  | time (seconds)
 13                |   3.56
 14                |  59.5
 
-I tried two compile toolchains:
+I tried three compile toolchains:
 - clang 10.0 with cuda 10.1
 - clang 11.0 with cuda 11.2
+- clang 12.0 with cuda 11.3
 
 ## OpenAcc (PGI compiler)
 
