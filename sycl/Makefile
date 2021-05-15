@@ -17,7 +17,7 @@
 # module use /opt/intel/oneapi/modulefiles
 # module load compiler/2021.2.0
 tsp_sycl_dpcpp_cpu: tsp.cpp tsp_utils.h route_cost.h route_iterator.h
-	dpcpp -std=c++17 -fsycl -O3 -fsycl-unnamed-lambda $< -o $@ -L${ONEAPI_ROOT}/tbb/2021.1.1/lib/intel64/gcc4.8 -ltbb
+	dpcpp -std=c++17 -fsycl -O3 -fsycl-unnamed-lambda $< -o $@
 
 # ======================================================
 # Intel OneAPI LLVM rebuilt with for Nvidia GPUs support
