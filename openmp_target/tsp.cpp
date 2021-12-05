@@ -157,14 +157,17 @@ int main(int argc, char* argv[])
 
   /*
    * check the number of accelerators
+   *
+   * this is currently commented, it seems it does'nt work when using too recent nvidia driver (?), not sure
+   * it used to work, but currently using cudatoolkit 11.5, it's not working
    */
-  int naccel = omp_get_num_devices();
-  if (0 == naccel) {
-    printf("No accelerator found ... exit\n");
-    exit(EXIT_FAILURE);
-  } else {
-    printf("%d accelerator found ... continue\n", naccel);
-  }
+  // int naccel = omp_get_num_devices();
+  // if (0 == naccel) {
+  //   printf("No accelerator found ... exit\n");
+  //   exit(EXIT_FAILURE);
+  // } else {
+  //   printf("%d accelerator found ... continue\n", naccel);
+  // }
 
   // print factorials up to 14!
   // print_factorials(14);
