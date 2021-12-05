@@ -1,3 +1,4 @@
 tsp_gnu_openmp
+tsp_gnu11_openmp
 tsp_clang_openmp
 tsp_intel_openmp
