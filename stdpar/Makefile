@@ -11,6 +11,12 @@ endif
 tsp_gnu_stdpar_cpu: tsp.cpp tsp_utils.h route_cost.h route_iterator.h counting_iterator.h
 	g++ -O3 -std=c++17 -I$(TBB_INC) $< -o $@ -ltbb
 
+tsp_gnu10_stdpar_cpu: tsp.cpp tsp_utils.h route_cost.h route_iterator.h counting_iterator.h
+	g++-10 -O3 -std=c++17 -I$(TBB_INC) $< -o $@ -ltbb
+
+tsp_gnu11_stdpar_cpu: tsp.cpp tsp_utils.h route_cost.h route_iterator.h counting_iterator.h
+	g++-11 -O3 -std=c++17 -I$(TBB_INC) $< -o $@ -ltbb
+
 #
 # NVIDIA/PGI for CPU (via tbb) and for GPU
 #
@@ -29,5 +35,6 @@ tsp_dpcpp_stdpar_cpu: tsp_oneapi.cpp tsp_utils.h route_cost.h route_iterator.h c
 all: tsp_gnu_stdpar_cpu tsp_pgi_stdpar_cpu
 
 clean:
+	\rm -f tsp_gnu_stdpar_cpu tsp_gnu10_stdpar_cpu tsp_gnu11_stdpar_cpu
 	\rm -f tsp_pgi_stdpar_cpu tsp_pgi_stdpar_gpu
 	\rm -f tsp_dpcpp_stdpar_cpu
