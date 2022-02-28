@@ -6,10 +6,10 @@
   ```
 - build for OpenMP backend:
   ```shell
-  make -j 8 CUDA_ARCH="Zen" CUDA_DEVICES="OpenMP"
+  make -j 8 KOKKOS_ARCH="Zen" KOKKOS_DEVICES="OpenMP"
   ```
 - build for Cuda backend:
   ```shell
-  module load cuda/11.3
-  make -j 8 CUDA_ARCH="Zen,Ampere80" CUDA_DEVICES="OpenMP,Cuda"
+  module load cuda/11.5
+  make -j 8 KOKKOS_ARCH="Zen,Ampere80" KOKKOS_DEVICES="OpenMP,Cuda"
   ```
