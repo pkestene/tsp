@@ -6,11 +6,10 @@ tsp_clang_openmp_target: tsp.cpp tsp_utils.h route_cost.h route_iterator.h
 #tsp_gnu_openmp_target: tsp.cpp tsp_utils.h route_cost.h route_iterator.h
 #	g++  -std=c++17 -O3 -fopenmp -fcf-protection=none -foffload="-lm" -lm  $< -o $@
 
-# nvc++ (21.3) does not currently support user defined reduction
+# nvc++ (22.3) does not currently support user defined reduction
 # we'll have to wait for now
 #tsp_nvidia_openmp_target: tsp.cpp tsp_utils.h route_cost.h route_iterator.h
 #	nvc++ --c++17 -mp=gpu -Minfo=accel -fast -ta=tesla:cc75 $< -o $@
-
 
 all: tsp_clang_openmp_target
 
